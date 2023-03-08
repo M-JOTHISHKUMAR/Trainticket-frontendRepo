@@ -1,0 +1,38 @@
+App {
+    text-align: center;
+}
+
+form{
+  background-image: url(qw.jpg);
+
+}
+body{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 109vh;
+    
+  }
+ form {
+   border:2px solid green;
+   padding: 30px;
+ }
+ img{
+   height: 120px;
+   margin-left: 90px;
+   margin-bottom: 10px;
+   display: block;
+   border:1px solid black;
+   border-radius: 50%;
+ }
+ .App-header {
+   background:transparent;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   padding-bottom: 10px;
+   align-items: center;
+   justify-content: center;
+   font-size: calc(10px + 2vmin);
+   color:orangered;
+ }

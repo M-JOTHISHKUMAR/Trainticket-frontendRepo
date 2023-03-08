@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import './App.css'
-function ValidationForm() {
-    const initValues={username:'',email:'',password:''}
+function ValidatingForm() {
+    const initValues={firstname:'',lastname:'',email:'',password:''}
     const [formValues,setFormValues]=useState(initValues);
     const [formErrors,setFormErrors]=useState({});
     const [isSubmit,setIsSubmit]=useState(false);
@@ -21,12 +20,18 @@ function ValidationForm() {
         const reg=new RegExp("[0-9]")
         const preg=new RegExp("[A-Z][A-za-z0-9$_]+")
 
-        if(!values.username)
-        errors.username="Username is Required";
-        else if(values.username.length<5)
-        errors.username="Username must have minimum 5 characters";
+        if(!values.firstname)
+        errors.firstname="Username is Required";
+        else if(values.username.length)
+        errors.firstname="Username must have minimum 1 characters";
         else if(reg.test(values.username))
-        errors.username="Username must contain only alphabets";
+        errors.firstname="Username must contain only alphabets";
+        if(!values.lastname)
+        errors.lastname="Username is Required";
+        else if(values.username.length)
+        errors.lastname="Username must have minimum 1 characters";
+        else if(reg.test(values.username))
+        errors.lastname="Username must contain only alphabets";
 
         if(!values.email)
         errors.email="Email is Required";
@@ -52,11 +57,17 @@ function ValidationForm() {
             <h1>JRCTC LOGIN</h1>
            
             <div className='row'>
-                <label>User Name</label><br></br>
-                <center><input type="text" id='username' placeholder='Type User Name Here' value={formValues.username}
+                <label>first Name</label><br></br>
+                <center><input type="text" id='firstname' placeholder='Type First Name Here' value={formValues.firstname}
                     onChange={handleChange}/></center>
             </div>
-            <p  style={{color:"red"}}>{formErrors.username}</p>
+            <p  style={{color:"red"}}>{formErrors.lastname}</p>
+            <div className='row'>
+                <label>last Name</label><br></br>
+                <center><input type="text" id='lastname' placeholder='Type First Name Here' value={formValues.lastname}
+                    onChange={handleChange}/></center>
+            </div>
+            <p  style={{color:"red"}}>{formErrors.lastnamename}</p>
 
             <div className='row'>
                 <label>E-mail</label><br></br>
@@ -75,14 +86,14 @@ function ValidationForm() {
             <div className='row'><br></br>
             <center><button className='btn btn-primary'>Login</button></center>
             </div>
-            </form>
             <div className='row'><br></br>
             <center><button className='btn btn-primary'>Signin</button></center>
             </div>
-            </div>
-            </center>
-            </div>
+        </form>
+        </div>
+        </center>
+        </div>
      );
 }
 
-export default ValidationForm
+export default ValidatingForm
